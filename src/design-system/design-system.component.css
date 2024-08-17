@@ -1,0 +1,21 @@
+h2 > span {
+    padding-right: 1rem;
+}
+
+section {
+    padding: 2rem 0rem;
+}
+
+article > div {
+    padding: 3.5rem 13rem 1rem 2rem;
+    margin-bottom: 1rem;
+    border: 1px solid white;
+}
+
+p > span {
+    padding: 0rem 3rem 0rem 0rem;
+}
+
+div > div:not(first-child) {
+    margin-bottom: 2rem;
+}
