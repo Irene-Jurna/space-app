@@ -92,6 +92,7 @@ body {
     background-color: hsl( var(--clr-dark) );
     line-height: 1.5;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Make images easier to work with */
@@ -307,23 +308,6 @@ select {
 .large-button:focus::after {
     opacity: 1;
     transform: scale(1.5);
-}
-
-.primary-navigation {
-    --gap: 8rem;
-    --underline-gap: 2rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.primary-navigation a {
-    text-decoration: none;
-}
-
-.primary-navigation a > span {
-    font-weight: 700;
-    margin-right: .5em;
 }
 
 .underline-indicators > * {
