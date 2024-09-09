@@ -5,8 +5,7 @@ import { Component, Input } from "@angular/core";
   selector: "app-tabs",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: "./tabs.component.html",
-  styleUrl: "./tabs.component.css",
+  templateUrl: "./tabs.component.html"
 })
 export class TabsComponent {
   @Input() tabs: string[] = [];
