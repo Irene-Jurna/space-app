@@ -1,3 +1,26 @@
+.crew {
+  background-size: cover;
+  background-position: bottom center;
+  background-image: url(../assets/crew/background-crew-mobile.jpg);
+}
+
+.crew-info > h2 {
+  color: hsl(var(--clr-white) / 0.5);
+}
+
+@media (min-width: 35rem) {
+  .crew {
+    background-position: center center;
+    background-image: url(../assets/crew/background-crew-tablet.jpg);
+  }
+}
+
+@media (min-width: 45rem) {
+  .crew {
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+  }
+}
+
 .grid-container--crew {
   --flow-space: 2rem;
   padding-top: 0.7rem;
