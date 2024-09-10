@@ -7,6 +7,10 @@
   background-image: url(../assets/home/background-home-mobile.jpg);
 }
 
+.home-mobile {
+  padding-bottom: 1em;
+}
+
 @media (min-width: 35em) {
   .home {
     background-position: center center;
@@ -23,7 +27,7 @@
     padding-bottom: 6rem;
     align-items: end;
   }
-  
+
   .grid-container--home > *:first-child {
     grid-column: 2;
   }

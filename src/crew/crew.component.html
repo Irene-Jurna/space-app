@@ -1,10 +1,22 @@
 <div class="crew">
   <app-navigation></app-navigation>
   <main id="main" class="grid-container grid-container--crew flow">
-    <div>
-      <h1 class="numbered-title">
-        <span aria-hidden="true">02</span> Meet your crew
-      </h1>
+    <h1 class="numbered-title">
+      <span aria-hidden="true">02</span> Meet your crew
+    </h1>
+    <div class="dot-indicators flex">
+      <button aria-selected="true">
+        <span class="sr-only">The commander</span>
+      </button>
+      <button aria-selected="false">
+        <span class="sr-only">The mission specialist</span>
+      </button>
+      <button aria-selected="false">
+        <span class="sr-only">The pilot</span>
+      </button>
+      <button aria-selected="false">
+        <span class="sr-only">The flight engineer</span>
+      </button>
     </div>
 
     <article class="crew-info">
@@ -20,23 +32,8 @@
         and former NASA astronaut. He launched into space for the third time as
         commander of Crew Dragon Demo-2.
       </p>
-
-      <div class="dot-indicators flex">
-        <button aria-selected="true">
-          <span class="sr-only">Slide title</span>
-        </button>
-        <button aria-selected="false">
-          <span class="sr-only">Slide title</span>
-        </button>
-        <button aria-selected="false">
-          <span class="sr-only">Slide title</span>
-        </button>
-        <button aria-selected="false">
-          <span class="sr-only">Slide title</span>
-        </button>
-      </div>
-
-      <img src="../assets/crew/image-douglas-hurley.png" alt="douglag hurley" />
     </article>
+
+    <img src="../assets/crew/image-douglas-hurley.png" alt="douglag hurley" />
   </main>
 </div>
