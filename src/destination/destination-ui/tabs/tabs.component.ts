@@ -1,17 +1,17 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: "app-tabs",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: "./tabs.component.html"
+  templateUrl: "./tabs.component.html",
 })
 export class TabsComponent {
   @Input() tabs: string[] = [];
-  selectedTab: number = 0;
+  selectedTab: string = "Moon";
 
-  selectTab(index: number) {
-    this.selectedTab = index;
+  selectTab(tab: string) {
+    this.selectedTab = tab;
   }
 }

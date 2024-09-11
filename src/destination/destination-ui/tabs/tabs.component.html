@@ -1,7 +1,8 @@
 <div class="tab-list underline-indicators flex">
   <button
-    *ngFor="let tab of tabs; let i = index"
-    [attr.aria-selected]="selectedTab === i"
+    *ngFor="let tab of tabs"
+    (click) = selectTab(tab);
+    [attr.aria-selected]="selectedTab === tab"
     class="uppercase ff-sans-cond text-white letter-spacing-2"
   >
     {{ tab }}
