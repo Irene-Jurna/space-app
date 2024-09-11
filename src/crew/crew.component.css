@@ -31,7 +31,7 @@
     "content";
 }
 
-.grid-container--crew > img {
+.grid-container--crew > picture {
   grid-area: image;
   max-width: 60%;
   border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
@@ -55,7 +55,7 @@
       "image";
   }
 
-  .grid-container--crew > img {
+  .grid-container--crew > picture {
     max-width: 90%;
   }
 
@@ -74,7 +74,7 @@
       ". dots image .";
   }
 
-  .grid-container--crew > img {
+  .grid-container--crew > picture {
     align-self: end;
   }
 

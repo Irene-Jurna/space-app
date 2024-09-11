@@ -27,7 +27,7 @@
     "content";
 }
 
-.grid-container--destination > img {
+.grid-container--destination > picture {
   grid-area: image;
   max-width: 60%;
 }
@@ -68,7 +68,7 @@
       ". image content .";
   }
 
-  .grid-container--destination > img {
+  .grid-container--destination > picture {
     max-width: 90%;
   }
 
