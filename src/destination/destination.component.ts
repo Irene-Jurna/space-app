@@ -10,7 +10,7 @@ import { TabsComponent } from "./destination-ui/tabs/tabs.component";
   styleUrl: "./destination.component.css",
 })
 export class DestinationComponent {
-  name: string = "";
+  name: string = "Moon";
   description: string = "";
 
   "destinations": [
@@ -55,4 +55,9 @@ export class DestinationComponent {
       travel: "7 years";
     }
   ];
+
+  onClickTab(tab: string) {
+    console.log("Loggie: " + tab);
+    this.name = tab;
+  }
 }
