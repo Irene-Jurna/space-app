@@ -1,7 +1,8 @@
 <div class="tab-list underline-indicators flex">
   <button
-    *ngFor="let tab of tabs"
+    *ngFor="let tab of tabs, let i = index"
     (click)="selectTab(tab)"
+    (keydown)="onKeydown($event)"
     [attr.aria-selected]="selectedTab === tab"
     class="uppercase ff-sans-cond text-white letter-spacing-2"
   >

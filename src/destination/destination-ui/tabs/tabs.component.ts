@@ -18,4 +18,16 @@ export class TabsComponent {
     this.selectedTab = tab;
     this.tabSelected.emit(this.selectedTab);
   }
+
+  onKeydown(e: any) {
+    if (e.key === "ArrowRight") {
+      this.index = (this.index + 1) % this.tabs.length;
+    }
+
+    if (e.key === "ArrowLeft") {
+      this.index = (this.index - 1 + this.tabs.length) % this.tabs.length;
+    }
+
+    this.selectTab(this.tabs[this.index]);
+  }
 }
