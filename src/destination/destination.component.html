@@ -6,37 +6,31 @@
     </h1>
 
     <picture>
-      <source
-        srcset="../assets/destination/image-moon.webp 1x"
-        type="image/webp"
-      />
-      <img src="../assets/destination/image-moon.png" alt="the moon" />
+      <source srcset="{{selectedDestination.images.webp}}" type="image/webp" />
+      <img src="{{ selectedDestination.images.png }}" alt="the moon" />
     </picture>
 
     <app-tabs
       [tabs]="['Moon', 'Mars', 'Europa', 'Titan']"
-      (tabSelected)="onClickTab($event)"
+      (tabSelected)="selectDestination($event)"
     ></app-tabs>
 
     <article class="destination-info flow">
-      <h2 class="fs-800 ff-serif uppercase">{{ name }}</h2>
+      <h2 class="fs-800 ff-serif uppercase">{{ selectedDestination.name }}</h2>
 
       <p>
-        See our planet as you’ve never seen it before. A perfect relaxing trip
-        away to help regain perspective and come back refreshed. While you’re
-        there, take in some history by visiting the Luna 2 and Apollo 11 landing
-        sites.
+        {{ selectedDestination.description }}
       </p>
 
       <div class="destination-meta flex">
         <div>
           <h3 class="fs-200 text-accent uppercase">Avg. Distance</h3>
-          <p class="ff-serif uppercase">384,400 km</p>
+          <p class="ff-serif uppercase">{{ selectedDestination.distance }}</p>
         </div>
 
         <div>
           <h3 class="fs-200 text-accent uppercase">Est. travel time</h3>
-          <p class="ff-serif uppercase">3 days</p>
+          <p class="ff-serif uppercase">{{ selectedDestination.travel }}</p>
         </div>
       </div>
     </article>

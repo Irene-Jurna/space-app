@@ -9,8 +9,10 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 })
 export class TabsComponent {
   @Input() tabs: string[] = [];
+  @Output() tabSelected = new EventEmitter<string>();
+
   selectedTab: string = "Moon";
-  @Output() tabSelected = new EventEmitter<string>;
+  index: number = 0;
 
   selectTab(tab: string) {
     this.selectedTab = tab;
