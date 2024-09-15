@@ -13,6 +13,8 @@
     <app-tabs
       [tabs]="['Moon', 'Mars', 'Europa', 'Titan']"
       (tabSelected)="selectDestination($event)"
+      role="tab"
+      aria-label="destination"
     ></app-tabs>
 
     <article class="destination-info flow">

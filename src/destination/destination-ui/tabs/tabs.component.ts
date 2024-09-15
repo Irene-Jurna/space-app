@@ -1,5 +1,12 @@
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  QueryList,
+  ViewChildren,
+} from "@angular/core";
 
 @Component({
   selector: "app-tabs",
@@ -13,6 +20,8 @@ export class TabsComponent {
 
   selectedTab: string = "Moon";
   index: number = 0;
+
+  // @ViewChildren("tabButton") tabButtons!: QueryList<any>;
 
   selectTab(tab: string) {
     this.selectedTab = tab;

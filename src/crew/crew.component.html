@@ -6,38 +6,35 @@
     </h1>
 
     <div class="dot-indicators flex">
-      <button aria-selected="true">
-        <span class="sr-only">The commander</span>
+      <button (click)="selectDot(this.crew[0])" aria-selected="true">
+        <span class="sr-only">{{ this.crewMember.role }}</span>
       </button>
-      <button aria-selected="false">
-        <span class="sr-only">The mission specialist</span>
+      <button (click)="selectDot(this.crew[1])" aria-selected="false">
+        <span class="sr-only">{{ this.crewMember.role }}</span>
       </button>
-      <button aria-selected="false">
-        <span class="sr-only">The pilot</span>
+      <button (click)="selectDot(this.crew[2])" aria-selected="false">
+        <span class="sr-only">{{ this.crewMember.role }}</span>
       </button>
-      <button aria-selected="false">
-        <span class="sr-only">The flight engineer</span>
+      <button (click)="selectDot(this.crew[3])" aria-selected="false">
+        <span class="sr-only">{{ this.crewMember.role }}</span>
       </button>
     </div>
 
     <article class="crew-info flow">
       <header class="flow flow--space-small">
-        <h2 class="fs-600 ff-serif text-accent uppercase">Commander</h2>
-        <p class="fs-700 ff-serif uppercase">Douglas Hurley</p>
+        <h2 class="fs-600 ff-serif text-accent uppercase">
+          {{ this.crewMember.role }}
+        </h2>
+        <p class="fs-700 ff-serif uppercase">{{ this.crewMember.name }}</p>
       </header>
       <p>
-        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot
-        and former NASA astronaut. He launched into space for the third time as
-        commander of Crew Dragon Demo-2.
+        {{ this.crewMember.bio }}
       </p>
     </article>
 
     <picture>
-      <source
-        srcset="../assets/crew/image-douglas-hurley.webp"
-        type="image/webp"
-      />
-      <img src="../assets/crew/image-douglas-hurley.png" alt="douglag hurley" />
+      <source srcset="{{this.crewMember.images.webp}}" type="image/webp" />
+      <img src="{{ this.crewMember.images.png }}" alt="douglag hurley" />
     </picture>
   </main>
 </div>
