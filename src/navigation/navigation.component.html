@@ -19,29 +19,35 @@
       data-visible="false"
       class="primary-navigation underline-indicators flex"
     >
-      <li class="active">
-        <a class="ff-sans-cond uppercase text-white letter-spacing-2" href=""
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a
+          class="ff-sans-cond uppercase text-white letter-spacing-2"
+          routerLink=""
+          ariaCurrentWhenActive="page"
           ><span aria-hidden="true">00</span>Home</a
         >
       </li>
-      <li>
+      <li routerLinkActive="active">
         <a
           class="ff-sans-cond uppercase text-white letter-spacing-2"
-          href="destination"
+          routerLink="/destination"
+          ariaCurrentWhenActive="page"
           ><span aria-hidden="true">01</span>Destination</a
         >
       </li>
-      <li>
+      <li routerLinkActive="active">
         <a
           class="ff-sans-cond uppercase text-white letter-spacing-2"
-          href="crew"
+          routerLink="/crew"
+          ariaCurrentWhenActive="page"
           ><span aria-hidden="true">02</span>Crew</a
         >
       </li>
-      <li>
+      <li routerLinkActive="active">
         <a
           class="ff-sans-cond uppercase text-white letter-spacing-2"
-          href="design"
+          routerLink="/design"
+          ariaCurrentWhenActive="page"
           ><span aria-hidden="true">03</span>Technology</a
         >
       </li>
