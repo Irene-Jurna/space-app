@@ -13,11 +13,19 @@
     <app-tabs
       [tabs]="['Moon', 'Mars', 'Europa', 'Titan']"
       (tabSelected)="selectDestination($event)"
-      role="tab"
+      role="tablist"
       aria-label="destination"
+      [selectedTab]="selectedDestination.name"
     ></app-tabs>
 
-    <article class="destination-info flow">
+    <article
+      *ngFor="let destination of destinations"
+      [id]="destination.name.toLocaleLowerCase() + '-panel'"
+      class="destination-info flow"
+      role="tabpanel"
+      [attr.aria-labelledby]="destination.name.toLocaleLowerCase() + '-tab'"
+      [hidden]="selectedDestination.name !== destination.name"
+    >
       <h2 class="fs-800 ff-serif uppercase">{{ selectedDestination.name }}</h2>
 
       <p>

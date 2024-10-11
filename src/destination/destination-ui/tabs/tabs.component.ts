@@ -1,12 +1,5 @@
 import { CommonModule } from "@angular/common";
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  QueryList,
-  ViewChildren,
-} from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: "app-tabs",
@@ -16,27 +9,26 @@ import {
 })
 export class TabsComponent {
   @Input() tabs: string[] = [];
+  @Input() selectedTab: string = "";
+
   @Output() tabSelected = new EventEmitter<string>();
-
-  selectedTab: string = "Moon";
-  index: number = 0;
-
-  // @ViewChildren("tabButton") tabButtons!: QueryList<any>;
 
   selectTab(tab: string) {
     this.selectedTab = tab;
     this.tabSelected.emit(this.selectedTab);
   }
 
-  onKeydown(e: any) {
-    if (e.key === "ArrowRight") {
-      this.index = (this.index + 1) % this.tabs.length;
-    }
+  onKeydown(e: KeyboardEvent) {
+    const currentIndex = this.tabs.indexOf(this.selectedTab);
 
-    if (e.key === "ArrowLeft") {
-      this.index = (this.index - 1 + this.tabs.length) % this.tabs.length;
-    }
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      e.preventDefault();
 
-    this.selectTab(this.tabs[this.index]);
+      const nextIndex =
+        e.key === "ArrowRight"
+          ? (currentIndex + 1) % this.tabs.length
+          : (currentIndex - 1 + this.tabs.length) % this.tabs.length;
+      this.selectTab(this.tabs[nextIndex]);
+    }
   }
 }

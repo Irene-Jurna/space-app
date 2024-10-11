@@ -1,9 +1,12 @@
 <div class="tab-list underline-indicators flex">
   <button
-    *ngFor="let tab of tabs; let i = index"
+    *ngFor="let tab of tabs"
     (click)="selectTab(tab)"
     (keydown)="onKeydown($event)"
     [attr.aria-selected]="selectedTab === tab"
+    [attr.aria-controls]="tab.toLocaleLowerCase() + '-panel'"
+    [id]="tab.toLocaleLowerCase() + '-tab'"
+    role="tab"
     class="uppercase ff-sans-cond text-white letter-spacing-2"
   >
     {{ tab }}

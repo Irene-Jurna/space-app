@@ -1,11 +1,12 @@
 import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { NavigationComponent } from "../navigation/navigation.component";
 import { TabsComponent } from "./destination-ui/tabs/tabs.component";
 
 @Component({
   selector: "app-destination",
   standalone: true,
-  imports: [NavigationComponent, TabsComponent],
+  imports: [NavigationComponent, TabsComponent, CommonModule],
   templateUrl: "./destination.component.html",
   styleUrl: "./destination.component.css",
 })

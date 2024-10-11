@@ -6,10 +6,14 @@
     </h1>
 
     <div class="dot-indicators flex">
-      <button (click)="selectDot(this.crew[0])" aria-selected="true">
+      <button
+        *ngFor="let member of crew"
+        (click)="selectDot(member)"
+        aria-selected="crewMember === member ? true : false"
+      >
         <span class="sr-only">{{ this.crewMember.role }}</span>
       </button>
-      <button (click)="selectDot(this.crew[1])" aria-selected="false">
+      <!-- <button (click)="selectDot(this.crew[1])" aria-selected="false">
         <span class="sr-only">{{ this.crewMember.role }}</span>
       </button>
       <button (click)="selectDot(this.crew[2])" aria-selected="false">
@@ -17,8 +21,16 @@
       </button>
       <button (click)="selectDot(this.crew[3])" aria-selected="false">
         <span class="sr-only">{{ this.crewMember.role }}</span>
-      </button>
+      </button> -->
     </div>
+
+    <!-- <div class="dot-indicators flex">
+      <button *ngFor="let member of crew; let i = index" 
+              (click)="selectDot(member)" 
+              [attr.aria-selected]="selectedCrewMember === member ? 'true' : 'false'">
+        <span class="sr-only">{{ member.role }}</span>
+      </button>
+    </div> -->
 
     <article class="crew-info flow">
       <header class="flow flow--space-small">
