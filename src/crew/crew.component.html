@@ -5,34 +5,28 @@
       <span aria-hidden="true">02</span> Meet your crew
     </h1>
 
-    <div class="dot-indicators flex">
+    <div
+      class="dot-indicators flex"
+      role="tablist"
+      aria-label="crew member list"
+    >
       <button
         *ngFor="let member of crew"
         (click)="selectDot(member)"
-        aria-selected="crewMember === member ? true : false"
+        [attr.aria-selected]="crewMember === member ? true : false"
+        [attr.aria-controls]="getGekoppeldeNaam(member.name) + '-panel'"
+        [id]="getGekoppeldeNaam(member.name) + '-dot'"
+        role="tab"
       >
-        <span class="sr-only">{{ this.crewMember.role }}</span>
-      </button>
-      <!-- <button (click)="selectDot(this.crew[1])" aria-selected="false">
-        <span class="sr-only">{{ this.crewMember.role }}</span>
-      </button>
-      <button (click)="selectDot(this.crew[2])" aria-selected="false">
-        <span class="sr-only">{{ this.crewMember.role }}</span>
-      </button>
-      <button (click)="selectDot(this.crew[3])" aria-selected="false">
-        <span class="sr-only">{{ this.crewMember.role }}</span>
-      </button> -->
-    </div>
-
-    <!-- <div class="dot-indicators flex">
-      <button *ngFor="let member of crew; let i = index" 
-              (click)="selectDot(member)" 
-              [attr.aria-selected]="selectedCrewMember === member ? 'true' : 'false'">
         <span class="sr-only">{{ member.role }}</span>
       </button>
-    </div> -->
+    </div>
 
-    <article class="crew-info flow">
+    <article
+      class="crew-info flow"
+      role="tabpanel"
+      [attr.aria-labelledby]="getGekoppeldeNaam(crewMember.name) + '-dot'"
+    >
       <header class="flow flow--space-small">
         <h2 class="fs-600 ff-serif text-accent uppercase">
           {{ this.crewMember.role }}

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
 import { NavigationComponent } from "../navigation/navigation.component";
 import { CommonModule } from "@angular/common";
 
@@ -49,9 +49,27 @@ export class CrewComponent {
     },
   ];
 
-  crewMember:any = this.crew[0];
+  crewMember: any = this.crew[0];
 
   selectDot(selectedCrewMember: object) {
     this.crewMember = selectedCrewMember;
+  }
+
+  getGekoppeldeNaam(naam: string) {
+    return naam.replace(/\s+/g, "-");
+  }
+
+  @HostListener("keydown", ["$event"])
+  handleKeyDown(event: KeyboardEvent) {
+    const currentIndex = this.crew.indexOf(this.crewMember);
+
+    if (event.key === "ArrowRight") {
+      const nextIndex = (currentIndex + 1) % this.crew.length;
+      this.selectDot(this.crew[nextIndex]);
+    } else if (event.key === "ArrowLeft") {
+      const prevIndex =
+        (currentIndex - 1 + this.crew.length) % this.crew.length;
+      this.selectDot(this.crew[prevIndex]);
+    }
   }
 }
