@@ -1,6 +1,6 @@
 .technology {
   background-size: cover;
-  min-height: 100vh;;
+  min-height: 100vh;
   background-image: url(../assets/technology/background-technology-mobile.jpg);
 }
 
@@ -28,6 +28,11 @@
 
 .numbered-indicators {
   flex-direction: row;
+  justify-content: center;
+}
+
+.technology-info > div:nth-of-type(2) p {
+  margin-top: var(--flow-space, 1rem);
 }
 
 @media (min-width: 35rem) {
@@ -57,27 +62,35 @@
   .grid-container--technology {
     grid-template-areas:
       ". title title ."
-      "content content image image";
-  }
-
-  .grid-container--technology > picture {
-    align-self: end;
-    max-width: 80%;
-    grid-column: span 2;
+      ". content image image";
   }
 
   .technology-info {
     text-align: left;
     align-items: flex-start;
-    border: 2px dotted white;
     flex-direction: row;
+    align-items: stretch;
+    margin-left: 2rem;
   }
 
-  .technology-info > div {
-    border: 2px solid pink;
+  .technology-text {
+    min-width: 30rem;
   }
 
-  .numbered-indicators {
+  .technology-info > .numbered-indicators {
     flex-direction: column;
+    justify-content: space-between;
+    padding-right: 3rem;
+  }
+
+  .technology-info > .numbered-indicators button {
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: var(--fs-500);
+  }
+
+  .grid-container--technology > picture {
+    justify-self: end;
   }
 }
