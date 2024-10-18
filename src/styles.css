@@ -151,6 +151,10 @@ select {
   --flow-space: 0.75rem;
 }
 
+.flow--space-medium {
+  --flow-space: 1.1rem;
+}
+
 .irene-container {
   /* Logical property (-inline) */
   .container {

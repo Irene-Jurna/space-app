@@ -68,7 +68,7 @@
 
   .grid-container--crew > picture {
     align-self: end;
-    max-width: 100%;
+    max-width: 80%;
     grid-column: span 2;
   }
 
