@@ -51,11 +51,15 @@
 @media (max-width: 70.99em) {
   .grid-container--technology {
     grid-template-columns: 1fr;
-    overflow: visible;
+  }
+
+  .grid-container--technology > picture img {
+    max-width: 101%;
   }
 
   .technology-text {
     padding-inline: 1rem;
+    max-width: 40rem;
   }
 }
 
